@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/wp-bannerize",
+  "version": "0.1.0",
+  "title": "Bannerize",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Display a list of banners in accordance with the settings below.",
+  "supports": {
+    "html": false
+  },
+  "example": {},
+  "attributes": {
+    "numbers": {
+      "type": "number",
+      "default": 1
+    },
+    "campaigns": {
+      "type": "array",
+      "default": []
+    },
+    "banners": {
+      "type": "array",
+      "default": []
+    },
+    "orderby": {
+      "enum": [
+        "menu_order",
+        "rand"
+      ],
+      "default": "menu_order"
+    }
+  },
+  "textdomain": "wp-bannerize",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./view.js",
+    "example-shared-view-script"
+  ],
+  "render": "file:./render.php",
+  "keywords": [
+    "ab967f"
+  ]
+}
