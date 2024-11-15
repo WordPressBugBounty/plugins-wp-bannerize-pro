@@ -1,58 +1,81 @@
-# Pure CSS tabs for WP Bones
+# Pure CSS Tabs for WP Bones
 
-Pure CSS tabs for WordPress/WP Bones
+<p align="center">
 
-[![Latest Stable Version](https://poser.pugx.org/wpbones/pure-css-tabs/v/stable)](https://packagist.org/packages/wpbones/pure-css-tabs)
-[![Total Downloads](https://poser.pugx.org/wpbones/pure-css-tabs/downloads)](https://packagist.org/packages/wpbones/pure-css-tabs)
-[![License](https://poser.pugx.org/wpbones/pure-css-tabs/license)](https://packagist.org/packages/wpbones/pure-css-tabs)
+  <a href="https://packagist.org/packages/wpbones/pure-css-tabs">
+  <img src="https://poser.pugx.org/wpbones/pure-css-tabs/v/stable?style=for-the-badge" alt="Latest Stable Version" />
+  </a>
+
+  <a href="https://packagist.org/packages/wpbones/pure-css-tabs">
+   <img src="https://poser.pugx.org/wpbones/pure-css-tabs/v/unstable?style=for-the-badge" alt="Latest Unstable Version" />
+  </a>
+
+  <a href="https://packagist.org/packages/wpbones/pure-css-tabs">
+   <img src="https://poser.pugx.org/wpbones/pure-css-tabs/downloads?style=for-the-badge" alt="Total Downloads" />
+  </a>
+
+  <a href="https://packagist.org/packages/wpbones/pure-css-tabs">
+   <img src="https://poser.pugx.org/wpbones/pure-css-tabs/license?style=for-the-badge" alt="License" />
+  </a>
+
+  <a href="https://packagist.org/packages/wpbones/pure-css-tabs">
+   <img src="https://poser.pugx.org/wpbones/pure-css-tabs/d/monthly?style=for-the-badge" alt="Monthly Downloads" />
+  </a>
+
+</p>
+
+This package provides a simple way to create tabs with pure CSS for WordPress/WP Bones.
+
+![Pure CSS Tabs for WP Bones](https://github.com/user-attachments/assets/e8143a4c-8694-420b-b281-c0fb0d080f5a)
+
+ ## Requirements
+
+This package works with a WordPress plugin written with [WP Bones framework library](https://github.com/wpbones/WPBones).
 
 ## Installation
 
 You can install third party packages by using:
 
-```sh
-php bones require wpbones/pure-css-tabs
+```sh copy
+php bones require  wpbones/pure-css-tabs
 ```
-   
-I advise to use this command instead of `composer require` because doing this an automatic renaming will done.  
+
+I advise to use this command instead of `composer require` because doing this an automatic renaming will done.
 
 You can use composer to install this package:
 
-```sh
-composer require wpbones/pure-css-tabs
+```sh copy
+composer require  wpbones/pure-css-tabs
 ```
 
-You may also to add `"wpbones/pure-css-tabs": "^1.0"` in the `composer.json` file of your plugin:
- 
-```json
+You may also to add `" wpbones/pure-css-tabs": "~0.7"` in the `composer.json` file of your plugin:
+
+```json copy filename="composer.json" {4}
   "require": {
-    "php": ">=7.2",
-    "wpbones/wpbones": "~1.0",
-    "wpbones/pure-css-tabs": "~1.0"
+    "php": ">=7.4",
+    "wpbones/wpbones": "~1.5",
+    " wpbones/pure-css-tabs": "~0.7"
   },
 ```
 
-and run 
+and run
 
-```sh
+```sh copy
 composer install
 ```
-    
-Alternatively, you can get the `src/resources/assets/less/wpbones-tabs.less` and then compile it, or get directly the `src/public/css/wpbones-tabs.css` files.    
-Also, you can get pre-compiled minified version `src/public/css/wpbones-tabs.min.css`.
 
 ## Enqueue for Controller
 
 You can use the provider to enqueue the styles.
 
-```php
+```php copy
 public function index()
 {
   // enqueue the minified version
   PureCSSTabsProvider::enqueueStyles();
-  
+
   // ...
-  
+
 }
 ```
 
@@ -60,23 +83,23 @@ public function index()
 
 This is a static class autoloaded by composer. You can use it to enqueue or get the styles path:
 
-```php
+```php copy
 // enqueue the minified version
 PureCSSTabsProvider::enqueueStyles();
 
 // enqueue the flat version
 PureCSSTabsProvider::enqueueStyles( false );
-    
+
 // return the absolute path of the minified css
 PureCSSTabsProvider::css();
 
 // return the absolute path of the flat css
-PureCSSTabsProvider::css();   
+PureCSSTabsProvider::css();
 ```
 
 ## HTML markup
 
-```html
+```html copy
 <!-- main tabs container -->
 <div class="wpbones-tabs">
 
@@ -86,38 +109,38 @@ PureCSSTabsProvider::css();
   <div class="wpbones-tab">
     <h3>Content</h3>
   </div>
-  
+
   <!-- second tab -->
   <input id="tab-2" type="radio" name="tabs" aria-hidden="true">
   <label for="tab-2" tabindex="0"><?php _e( 'Posts' ) ?></label>
   <div class="wpbones-tab">
     <h3>Content</h3>
-  </div>  
-  
+  </div>
+
   <!-- son on... -->
-  
+
 </div>
 ```
 
 Of course, you may use the **fragment** feature to include the single tabs:
 
-```html
+```html copy
 <!-- main tabs container -->
 <div class="wpbones-tabs">
 
   <!-- first tab -->
   <?php echo WPkirk()->view( 'folder.tab1' ) ?>
-  
+
   <!-- second tab -->
   <?php echo WPkirk()->view( 'folder.tab2' ) ?>
-  
+
   <!-- son on... -->
-  
+
 </div>
 ```
  In `/folder/tab1.php` you just insert the following markup:
- 
- ```html
+
+ ```html copy
 <!-- first tab -->
 <input id="tab-1" type="radio" name="tabs" checked="checked" aria-hidden="true">
 <label for="tab-1" tabindex="0"><?php _e( 'Database' ) ?></label>
@@ -131,23 +154,21 @@ Of course, you may use the **fragment** feature to include the single tabs:
 Of course, you can edit both of CSS or LESS files in order to change the appearance of tabs.
 In the LESS file, you'll find the color variable as well.
 
-```less
+```less copy
 @wpbones-tab-border-color : #aaa;
 @wpbones-tab-responsive-accordion-border : #ddd;
 @wpbones-tab-disabled : #ddd;
 @wpbones-tab-content-color : #fff;
 ```
 
-> :pushpin:
->
-> Anyway, the best way to customize your tabs is override the default styles. Otherwise, when an update will be done you'll lose your customization.
+> 💡 Anyway, the best way to customize your tabs is override the default styles. Otherwise, when an update will be done you'll lose your customization.
 
 ## Helper
 
 In addition, you can use some methods provided by `PureCSSTabsProvider` class.
 In your HTML view you might use:
 
-```php
+```php copy
     /**
      * Display tabs by array
      *
@@ -168,7 +189,7 @@ In your HTML view you might use:
 
 Also, you can use `openTab()` and `closeTab()` methods:
 
-```php
+```php copy
   /**
    * Display the open tab.
    *
@@ -179,20 +200,18 @@ Also, you can use `openTab()` and `closeTab()` methods:
    public static function openTab( $label, $id = null, $selected = false ) {}
 ```
 
-```html
+```html copy
 <div class="wpbones-tabs">
 
   <?php WPBannerize\PureCSSTabs\PureCSSTabsProvider::openTab( 'Tab 1', null, true ) ?>
     <h2>Hello, world! I'm the content of tab-1</h2>
   <?php WPBannerize\PureCSSTabs\PureCSSTabsProvider::closeTab ?>
-    
+
   <?php WPBannerize\PureCSSTabs\PureCSSTabsProvider::openTab( 'Tab 2' ) ?>
     <h2>Hello, world! I'm the content of tab-2</h2>
   <?php WPBannerize\PureCSSTabs\PureCSSTabsProvider::closeTab ?>
-    
-</div>    
-```
-> :pushpin:
->
-> Remember, in the example above I have used `WPBannerize` base namespace. You should replace it with your own namespace.
 
+</div>
+```
+
+> 👆 Remember, in the example above I have used `WPBannerize` base namespace. You should replace it with your own namespace.

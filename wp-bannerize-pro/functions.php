@@ -4,6 +4,14 @@ use WPBannerize\Models\WPBannerizePost;
 use WPBannerize\Models\WPBannersQuery;
 
 if (!function_exists('wp_bannerize_get_page_by_title')) {
+    /**
+     * Retrieves a page by its title and type.
+     *
+     * @param string $title The title of the page to retrieve.
+     * @param string $type  The type of the page to retrieve.
+     *
+     * @return WP_Post|null The retrieved page object, or null if not found.
+     */
     function wp_bannerize_get_page_by_title($title, $type)
     {
         $posts = get_posts([
@@ -15,6 +23,7 @@ if (!function_exists('wp_bannerize_get_page_by_title')) {
             'update_post_meta_cache' => false,
             'orderby' => 'post_date ID',
             'order' => 'ASC',
+            
         ]);
 
         if (!empty($posts)) {
@@ -28,6 +37,11 @@ if (!function_exists('wp_bannerize_get_page_by_title')) {
 }
 
 if (!function_exists('wp_bannerize_pro_sanitize_mysql_datetime')) {
+
+    /**
+     * Sanitize a MySQL datetime string.
+     *
+     */
     function wp_bannerize_pro_sanitize_mysql_datetime($value)
     {
         $result = '';
@@ -49,6 +63,20 @@ if (!function_exists('wp_bannerize_pro_sanitize_mysql_datetime')) {
 }
 
 if (!function_exists('wp_bannerize_pro')) {
+
+    /**
+     * Display a banner or a group of banners.
+     *
+     * @param array $args {
+     *     Optional. Array of arguments.
+     *
+     *     @type int|string $id The banner id or slug.
+     *     @type string $layout The layout of the banner.
+     *     @type string $orderby The order of the banner.
+     *     @type bool $mobile Display the banner on mobile.
+     *     @type bool $desktop Display the banner on desktop.
+     * }
+     */
     function wp_bannerize_pro($args = [])
     {
         // Backward compatibility
@@ -103,18 +131,18 @@ if (!function_exists('wp_bannerize_pro')) {
 
                 <?php // Loop into the banner id or slug
 
-                foreach ($ids as $id) {
-                    // Create a banner instance
-                    $banner = WPBannerizePost::find($id, 'wp_bannerize');
+                            foreach ($ids as $id) {
+                                // Create a banner instance
+                                $banner = WPBannerizePost::find($id, 'wp_bannerize');
 
-                    // If no banner found return the content
-                    if (!is_null($banner)) {
-                        $banner->display();
-                    }
-                } ?>
+                                // If no banner found return the content
+                                if (!is_null($banner)) {
+                                    $banner->display();
+                                }
+                            } ?>
             </div>
 
-            <?php
+<?php
         } else {
             // For stability reason remove the id
             unset($id);
@@ -148,12 +176,34 @@ add_filter('wpbones_geolocalizer_ipstack_api_key', function () {
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_wp_bannerize_block_init()
+function wp_bannerize_register_block_type()
 {
     register_block_type(__DIR__ . '/public/block');
+
+    $script_handle = generate_block_asset_handle('wp-bannerize/block', 'editorScript');
+
+    $wp_block = wp_set_script_translations(
+        $script_handle,
+        'wp-bannerize',
+        plugin_dir_path(__FILE__) . 'localization'
+    );
 }
 
-add_action('init', 'create_block_wp_bannerize_block_init');
+add_action('init', 'wp_bannerize_register_block_type');
+
+function wp_bannerize_wp_set_script_translations()
+{
+    $script_handle = generate_block_asset_handle('wp-bannerize/block', 'editorScript');
+
+    $wp_block = wp_set_script_translations(
+        $script_handle,
+        'wp-bannerize',
+        plugin_dir_path(__FILE__) . 'localization'
+    );
+
+    error_log("Wp Block $wp_block");
+}
+add_action('enqueue_block_editor_assets', 'wp_bannerize_wp_set_script_translations');
 
 function rest_wp_bannerize_collection_params($params)
 {

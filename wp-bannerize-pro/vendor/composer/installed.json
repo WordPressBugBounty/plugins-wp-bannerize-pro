@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "eftec/bladeone",
-            "version": "4.13",
-            "version_normalized": "4.13.0.0",
+            "version": "4.16",
+            "version_normalized": "4.16.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EFTEC/BladeOne.git",
-                "reference": "a24ce564a681fa3e37b2490952915c403ee9e56a"
+                "reference": "94570df4cd5e81a1efd0bb25d451bd715d529279"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EFTEC/BladeOne/zipball/a24ce564a681fa3e37b2490952915c403ee9e56a",
-                "reference": "a24ce564a681fa3e37b2490952915c403ee9e56a",
+                "url": "https://api.github.com/repos/EFTEC/BladeOne/zipball/94570df4cd5e81a1efd0bb25d451bd715d529279",
+                "reference": "94570df4cd5e81a1efd0bb25d451bd715d529279",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
                 "eftec/bladeonehtml": "Extension to create forms",
                 "ext-mbstring": "This extension is used if it's active"
             },
-            "time": "2024-03-26T21:35:25+00:00",
+            "time": "2024-10-11T17:41:08+00:00",
             "bin": [
                 "lib/bladeonecli"
             ],
@@ -58,7 +58,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EFTEC/BladeOne/issues",
-                "source": "https://github.com/EFTEC/BladeOne/tree/4.13"
+                "source": "https://github.com/EFTEC/BladeOne/tree/4.16"
             },
             "install-path": "../eftec/bladeone"
         },
@@ -113,20 +113,20 @@
         },
         {
             "name": "wpbones/pure-css-switch",
-            "version": "1.1.1",
-            "version_normalized": "1.1.1.0",
+            "version": "1.1.3",
+            "version_normalized": "1.1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpbones/pure-css-switch.git",
-                "reference": "b7bc7d47eafd24a21322113dcb93d181936d5976"
+                "reference": "e774d8db48123fefcd09a612d2eebd2256232bb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpbones/pure-css-switch/zipball/b7bc7d47eafd24a21322113dcb93d181936d5976",
-                "reference": "b7bc7d47eafd24a21322113dcb93d181936d5976",
+                "url": "https://api.github.com/repos/wpbones/pure-css-switch/zipball/e774d8db48123fefcd09a612d2eebd2256232bb6",
+                "reference": "e774d8db48123fefcd09a612d2eebd2256232bb6",
                 "shasum": ""
             },
-            "time": "2024-04-09T16:23:14+00:00",
+            "time": "2024-10-01T15:55:40+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -141,8 +141,8 @@
             "authors": [
                 {
                     "name": "Giovambattista Fazioli",
-                    "email": "giovambattista.fazioli@gmail.com",
-                    "homepage": "http://wpbones.wordpress.com"
+                    "email": "wpbones.info@gmail.com",
+                    "homepage": "https://wpbones.com/docs/Packages/official-packages"
                 }
             ],
             "description": "Pure CSS Switch Button for WP Bones",
@@ -153,28 +153,28 @@
                 "less"
             ],
             "support": {
-                "email": "giovambattista.fazioli@gmail.com",
+                "email": "wpbones.info@gmail.com",
                 "issues": "https://github.com/wpbones/pure-css-switch/issues",
-                "source": "https://github.com/wpbones/pure-css-switch/tree/1.1.1"
+                "source": "https://github.com/wpbones/pure-css-switch/tree/1.1.3"
             },
             "install-path": "../wpbones/pure-css-switch"
         },
         {
             "name": "wpbones/pure-css-tabs",
-            "version": "1.0.12",
-            "version_normalized": "1.0.12.0",
+            "version": "1.0.13",
+            "version_normalized": "1.0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpbones/pure-css-tabs.git",
-                "reference": "b9c8177d316c95bb7ae60eb80d91c42da4007578"
+                "reference": "d1ee5c174ce82c0e6867da0a5210db46767897d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpbones/pure-css-tabs/zipball/b9c8177d316c95bb7ae60eb80d91c42da4007578",
-                "reference": "b9c8177d316c95bb7ae60eb80d91c42da4007578",
+                "url": "https://api.github.com/repos/wpbones/pure-css-tabs/zipball/d1ee5c174ce82c0e6867da0a5210db46767897d6",
+                "reference": "d1ee5c174ce82c0e6867da0a5210db46767897d6",
                 "shasum": ""
             },
-            "time": "2024-04-09T16:20:34+00:00",
+            "time": "2024-10-01T15:55:48+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -189,8 +189,8 @@
             "authors": [
                 {
                     "name": "Giovambattista Fazioli",
-                    "email": "giovambattista.fazioli@gmail.com",
-                    "homepage": "http://wpbones.wordpress.com"
+                    "email": "wpbones.info@gmail.com",
+                    "homepage": "https://wpbones.com/docs/Packages/official-packages"
                 }
             ],
             "description": "Pure CSS tabs for WP Bones",
@@ -201,28 +201,28 @@
                 "less"
             ],
             "support": {
-                "email": "giovambattista.fazioli@gmail.com",
+                "email": "wpbones.info@gmail.com",
                 "issues": "https://github.com/wpbones/pure-css-tabs/issues",
-                "source": "https://github.com/wpbones/pure-css-tabs/tree/1.0.12"
+                "source": "https://github.com/wpbones/pure-css-tabs/tree/1.0.13"
             },
             "install-path": "../wpbones/pure-css-tabs"
         },
         {
             "name": "wpbones/useragent",
-            "version": "1.0.2",
-            "version_normalized": "1.0.2.0",
+            "version": "1.0.3",
+            "version_normalized": "1.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpbones/useragent.git",
-                "reference": "9c9f2c317c2faf0bc4ae911b3a53b8010ae01994"
+                "reference": "e489cc2bfc19af3c33d78ece75ea97e0baee4a07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpbones/useragent/zipball/9c9f2c317c2faf0bc4ae911b3a53b8010ae01994",
-                "reference": "9c9f2c317c2faf0bc4ae911b3a53b8010ae01994",
+                "url": "https://api.github.com/repos/wpbones/useragent/zipball/e489cc2bfc19af3c33d78ece75ea97e0baee4a07",
+                "reference": "e489cc2bfc19af3c33d78ece75ea97e0baee4a07",
                 "shasum": ""
             },
-            "time": "2024-04-09T16:19:19+00:00",
+            "time": "2024-10-01T15:55:55+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -240,8 +240,8 @@
             "authors": [
                 {
                     "name": "Giovambattista Fazioli",
-                    "email": "giovambattista.fazioli@gmail.com",
-                    "homepage": "http://wpbones.wordpress.com"
+                    "email": "wpbones.info@gmail.com",
+                    "homepage": "https://wpbones.com/docs/Packages/official-packages"
                 }
             ],
             "description": "An useful method to detect the useragent",
@@ -251,9 +251,9 @@
                 "user agent"
             ],
             "support": {
-                "email": "giovambattista.fazioli@gmail.com",
+                "email": "wpbones.info@gmail.com",
                 "issues": "https://github.com/wpbones/useragent/issues",
-                "source": "https://github.com/wpbones/useragent/tree/1.0.2"
+                "source": "https://github.com/wpbones/useragent/tree/1.0.3"
             },
             "install-path": "../wpbones/useragent"
         },
@@ -264,19 +264,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpbones/WPBones.git",
-                "reference": "d033ee515487739bfd2d4e3ad9ec4767b1056cc3"
+                "reference": "2b808686c44a308ca97144ab570817c373076823"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpbones/WPBones/zipball/d033ee515487739bfd2d4e3ad9ec4767b1056cc3",
-                "reference": "d033ee515487739bfd2d4e3ad9ec4767b1056cc3",
+                "url": "https://api.github.com/repos/wpbones/WPBones/zipball/2b808686c44a308ca97144ab570817c373076823",
+                "reference": "2b808686c44a308ca97144ab570817c373076823",
                 "shasum": ""
             },
             "require": {
                 "eftec/bladeone": "^4.13",
                 "php": ">=7.4"
             },
-            "time": "2024-08-02T05:25:27+00:00",
+            "time": "2024-11-15T12:42:29+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -295,12 +295,12 @@
             "authors": [
                 {
                     "name": "Giovambattista Fazioli",
-                    "email": "giovambattista.fazioli@gmail.com",
-                    "homepage": "http://undolog.com"
+                    "email": "wpbones.info@gmail.com",
+                    "homepage": "https://wpbones.com/"
                 }
             ],
             "description": "WordPress framework for Laravel developers",
-            "homepage": "https://wpbones.vercel.app",
+            "homepage": "https://wpbones.com",
             "keywords": [
                 "framework",
                 "laravel",
@@ -313,6 +313,12 @@
                 "issues": "https://github.com/wpbones/WPBones/issues",
                 "source": "https://github.com/wpbones/WPBones/"
             },
+            "funding": [
+                {
+                    "url": "https://github.com/wpbones",
+                    "type": "github"
+                }
+            ],
             "install-path": "../wpbones/wpbones"
         }
     ],

@@ -1,16 +1,13 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "create-block/wp-bannerize",
-  "version": "0.1.0",
+  "name": "wp-bannerize/block",
   "title": "Bannerize",
-  "category": "widgets",
+  "textdomain": "wp-bannerize",
   "icon": "smiley",
-  "description": "Display a list of banners in accordance with the settings below.",
-  "supports": {
-    "html": false
-  },
+  "category": "widgets",
   "example": {},
+  "description": "Display a list of banners in accordance with the settings below.",
   "attributes": {
     "numbers": {
       "type": "number",
@@ -32,7 +29,6 @@
       "default": "menu_order"
     }
   },
-  "textdomain": "wp-bannerize",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",

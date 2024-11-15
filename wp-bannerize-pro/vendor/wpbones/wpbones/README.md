@@ -9,19 +9,23 @@
 <p align="center">
 
   <a href="https://packagist.org/packages/wpbones/wpbones">
-   <img src="https://poser.pugx.org/wpbones/wpbones/v/stable" alt="Latest Stable Version" />
+  <img src="https://poser.pugx.org/wpbones/wpbones/v/stable?style=for-the-badge" alt="Latest Stable Version" />
   </a>
 
   <a href="https://packagist.org/packages/wpbones/wpbones">
-   <img src="https://poser.pugx.org/wpbones/wpbones/downloads" alt="Total Downloads" />
+  <img src="https://poser.pugx.org/wpbones/wpbones/v/unstable?style=for-the-badge" alt="Latest Unstable Version" />
   </a>
 
   <a href="https://packagist.org/packages/wpbones/wpbones">
-   <img src="https://poser.pugx.org/wpbones/wpbones/license" alt="License" />
+  <img src="https://poser.pugx.org/wpbones/wpbones/downloads?style=for-the-badge" alt="Total Downloads" />
   </a>
 
   <a href="https://packagist.org/packages/wpbones/wpbones">
-   <img src="https://poser.pugx.org/wpbones/wpbones/d/monthly" alt="Monthly Downloads" />
+  <img src="https://poser.pugx.org/wpbones/wpbones/license?style=for-the-badge" alt="License" />
+  </a>
+
+  <a href="https://packagist.org/packages/wpbones/wpbones">
+  <img src="https://poser.pugx.org/wpbones/wpbones/d/monthly?style=for-the-badge" alt="Monthly Downloads" />
   </a>
 
 </p>
@@ -31,10 +35,12 @@
 ## 1. Checkout the Website and Docs
 
 <p align="center">
-Have a look at the new <a href="https://wpbones.vercel.app">WPBones website and documentation</a>
+Have a look at the new <a href="https://wpbones.com">WPBones website and documentation</a>
 </p>
 
-<img width="1432" alt="image" src="https://github.com/wpbones/WPBones/assets/432181/d08cfd91-3992-4579-a4a3-2847d39fad26">
+<img width="100%" alt="WP Bones Website and Documentation" src="https://github.com/user-attachments/assets/647cfc42-1bc4-45b0-aeb9-f16ff4c95038">
+
+
 
 ## 2. Join the Community
 
@@ -46,10 +52,4 @@ To participate more actively in discussions and stay updated on proposals and la
 
 <a href="https://github.com/wpbones/wpbones/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=wpbones/wpbones" />
-</a>
-
-### WPBannerize demo
-
-<a href="https://github.com/wpbones/wpkirk/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=wpbones/wpkirk" />
 </a>

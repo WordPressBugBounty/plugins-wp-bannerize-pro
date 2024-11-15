@@ -76,7 +76,7 @@ if (!function_exists('wpbones_array_insert')) {
    *
    * @return array
    */
-  function wpbones_array_insert($arr, $key, $val, $index = 0)
+  function wpbones_array_insert($arr, $key, $val, $index = 0): array
   {
     $arrayEnd = array_splice($arr, $index);
     $arrayStart = array_splice($arr, 0, $index);
@@ -182,9 +182,7 @@ if (!function_exists('wpbones_is_true')) {
 }
 
 if (!function_exists('wpbones_logger')) {
-  /**
-   * Utility to get an instance of Logger.
-   */
+  /* Utility to get an instance of Logger. */
   function wpbones_logger()
   {
     if (count(func_get_args()) > 0) {
@@ -196,11 +194,122 @@ if (!function_exists('wpbones_logger')) {
 }
 
 if (!function_exists('logger')) {
-  /**
-   * Utility to get an instance of Logger.
-   */
+  /* Utility to get an instance of Logger. */
   function logger()
   {
     return call_user_func_array('wpbones_logger', func_get_args());
+  }
+}
+
+if (!function_exists('wpbones_provider')) {
+  /**
+   * Return a provider by name
+   *
+   * @param string  $name The Class name of the provider.
+   *
+   * @since 1.6.0
+   *
+   * @return mixed|null
+   */
+  function wpbones_provider($provider)
+  {
+    return WPBannerize()->provider($provider);
+  }
+}
+
+if (!function_exists('wpbones_flatten_and_uniquify')) {
+  /**
+   * Flattens a multi-dimensional array or comma-separated string and removes duplicates.
+   *
+   * This function takes an input which can be either a multi-dimensional array
+   * or a comma-separated string, flattens it into a single-dimensional array,
+   * and removes any duplicate values.
+   *
+   * @param array|string $input The input to be flattened and uniquified.
+   *                            Can be a multi-dimensional array or a comma-separated string.
+   *
+   * @since 1.6.1
+
+   * @return array A flat array with unique values.
+   */
+  function wpbones_flatten_and_uniquify($input): array
+  {
+    // If the input is a string, convert it to an array
+    if (is_string($input)) {
+      $input = explode(',', $input);
+    }
+
+    // Use array_reduce to recursively flatten the array
+    $flattened = array_reduce((array)$input, function ($carry, $item) {
+      return array_merge($carry, is_array($item) ? wpbones_flatten_and_uniquify($item) : [$item]);
+    }, []);
+
+    // Remove duplicates and return the array
+    return array_unique($flattened);
+  }
+}
+
+if (!function_exists('wpbones_cache')) {
+  /**
+   * Utility to cache a value.
+   * If the cache key exists, the value is returned.
+   * If the cache key does not exist, the value is cached and returned.
+   * If the expire time is 0, the cache key is deleted.
+   * Under the hood, this function uses the WordPress Transients API.
+   *
+   * @param string $key    The cache key.
+   * @param mixed  $value  The value to cache.
+   * @param int    $expire The expiration time in seconds. Default is 12 hours.
+   *
+   * @since 1.8.0
+   *
+   * @return mixed
+   */
+  function wpbones_cache($key, $value, $expire = 12 * HOUR_IN_SECONDS)
+  {
+    // delete the transient if the expire time is 0
+    if ($expire === 0 || $expire === false) {
+      delete_transient($key);
+
+      return $value;
+    }
+
+    $result = get_transient($key);
+
+    if (false === $result) {
+      $result = $value;
+      set_transient($key, $result, $expire);
+    }
+
+    return $result;
+  }
+}
+
+if (!function_exists('wpbones_modules')) {
+  /**
+   * Import a file from the theme or plugin.
+   *
+   * @param string $file The file to import.
+   *
+   * @return mixed
+   */
+  function wpbones_modules($file)
+  {
+    // append ".php" if not present
+    $file_name = rtrim($file, '.php') . '.php';
+
+    $path = WPBannerize()->basePath . '/plugin/modules/' . $file_name;
+
+    return require $path;
+  }
+}
+
+if (!function_exists('import')) {
+  /**
+   * Alias of wpbones_modules()
+   */
+  function import($file)
+  {
+    return wpbones_modules($file);
   }
 }

@@ -12,12 +12,12 @@
   "authors": [
     {
       "name": "Giovambattista Fazioli",
-      "email": "giovambattista.fazioli@gmail.com",
-      "homepage": "http://wpbones.wordpress.com"
+      "email": "wpbones.info@gmail.com",
+      "homepage": "https://wpbones.com/docs/Packages/official-packages"
     }
   ],
   "support": {
-    "email": "giovambattista.fazioli@gmail.com",
+    "email": "wpbones.info@gmail.com",
     "issues": "https://github.com/wpbones/pure-css-tabs/issues"
   },
   "autoload": {

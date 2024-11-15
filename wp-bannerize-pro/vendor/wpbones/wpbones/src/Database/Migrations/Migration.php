@@ -6,37 +6,53 @@ use WPBannerize\WPBones\Database\DB;
 
 class Migration
 {
-  protected $charsetCollate = 'dummy_charset_collate';
+    /**
+     * The charset collate of the database.
+     *
+     * @var string
+     */
+    protected $charsetCollate = 'dummy_charset_collate';
 
-  /**
-   * Create a new Migration.
-   */
-  public function __construct()
-  {
-    global $wpdb;
+    /**
+     * Will use the WordPress prefix of the database.
+     *
+     * @since 1.7.0
+     * @var bool
+     */
+    protected $usePrefix = true;
 
-    $this->charsetCollate = $wpdb->get_charset_collate();
+    /**
+     * Create a new Migration.
+     */
+    public function __construct()
+    {
+        global $wpdb;
 
-    $this->up();
-  }
+        $this->charsetCollate = $wpdb->get_charset_collate();
 
-  public function up()
-  {
-    // You may override this method on plugin activation
-  }
+        $this->up();
+    }
 
-  protected function create($tablename, $schema)
-  {
-    $table = DB::getTableName($tablename);
+    public function up()
+    {
+        // You may override this method on plugin activation
+    }
 
-    $sql = "CREATE TABLE {$table} {$schema};";
+    protected function create($tablename, $schema)
+    {
+        $table = DB::getTableName($tablename, $this->usePrefix);
 
-    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-    dbDelta($sql);
-  }
+        $sql = "CREATE TABLE {$table} {$schema}";
 
-  public function down()
-  {
-    // You may override this method on plugin deactivation
-  }
+        // add ";" at the end of the string $sql if missing
+        $sql = rtrim($sql, ';') . ';';
+
+        require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+        dbDelta($sql);
+    }
+
+    public function down()
+    {
+        // You may override this method on plugin deactivation
+    }
 }

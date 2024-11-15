@@ -20,9 +20,9 @@ class ComposerStaticInitc81ed5d1fcacf6e393db54e42bfe8664
         'W' => 
         array (
             'WPBannerize\\WPBones\\' => 15,
-            'WPBannerize\\UserAgent\\' => 22,
-            'WPBannerize\\PureCSSTabs\\' => 24,
-            'WPBannerize\\PureCSSSwitch\\' => 26,
+            'WPBannerize\\UserAgent\\' => 17,
+            'WPBannerize\\PureCSSTabs\\' => 19,
+            'WPBannerize\\PureCSSSwitch\\' => 21,
             'WPBannerize\\GeoLocalizer\\' => 25,
             'WPBannerize\\' => 12,
         ),

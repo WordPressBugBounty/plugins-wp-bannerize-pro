@@ -3,8 +3,8 @@ Contributors: gfazioli
 Donate link: https://www.paypal.com/donate/?hosted_button_id=L77YYA8AVH2UW
 Tags: Banner Management, Advertising, Marketing Tools, Ad Placement, Campaign Optimization
 Requires at least: 6.2
-Tested up to: 6.6
-Stable tag: 1.9.3
+Tested up to: 6.7
+Stable tag: 1.9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
